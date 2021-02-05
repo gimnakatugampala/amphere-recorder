@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amphere Recorder | Gimna katugampala Production</title>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        background-color: #dbdbdb;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: auto min-content;
+        justify-content: center;
+        justify-items: end;
+        align-items: center;
+        gap: 5px 10px;
+      }
+
+      input {
+        margin: 0;
+      }
+      .controllers {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      a {
+        background-color: rgb(68, 68, 161);
+        color: #fff;
+        padding: 15px;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="visualizer"></canvas>
+    <div class="grid">
+      <label for="volume">Volume</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value=".5" />
+
+      <label for="bass">Bass</label>
+      <input type="range" id="bass" min="-10" max="10" value="0" />
+
+      <label for="mid">Mid</label>
+      <input type="range" id="mid" min="-10" max="10" value="0" />
+
+      <label for="treble">Treble</label>
+      <input type="range" id="treble" min="-10" max="10" value="0" />
+    </div>
+    <div class="controllers">
+      <button id="start">Start Recording</button>
+      <button id="stop" disabled>Stop Recording</button>
+      <video autoplay />
+    </div>
+  </body>
+</html>
